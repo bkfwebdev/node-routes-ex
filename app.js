@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const ExpressError = require('./expressError');
 
-const { convertAndValidateNumsArray, findMode, findMean, findMedian } = require('./helpers');
+const { convertAndValidateNumsArray, findMode, findMean, findMedian } = require('./helperfunctions');
 
+app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
